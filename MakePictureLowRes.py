@@ -17,7 +17,7 @@ num_colors1 = 16 # Adjust the colors the picture will have here. Its not like 16
 
 # If you want to support me, check out my website at http://www.rubengt.site , you'll find my ko-fi donation page there!
 
-print("Convert Pictures to lower resolutions1 Version 1.0o") # Read about this in readme.md at line 26, line 27, line 28.
+print("Convert Pictures to lower resolutions1 Version 1.0o") # Read about this in readme.md from line 36 to line 38.
 print("Made By RubenAzaHeker aka RubenGT")
 print(" ")
 time.sleep(2)

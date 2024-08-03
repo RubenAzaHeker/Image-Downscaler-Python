@@ -6,6 +6,15 @@ Please dont steal my code, thanks :)
 
 English is not my first language so exusce me for my bad grammar, thanks.
 
+Download MakePictureLowRes.py first then read this, or you can just read this without downloading the code
+
+Things you need to know before downloading: 
+
+- This program "Degrades" the pictures you chose while running the code
+- You need Python and Pillow extension installed for the code to work, otherwise there will be errors and the code wont run
+- To edit the values you'll need an editing program (line 32)
+
+
 Things you need to know about the program: You need to have Python installed for it to work of course
 BUT! you need to have Pillow installed too ("pip install Pillow" in a terminal)
 
