@@ -5,19 +5,21 @@ import warnings
 
 new_width1 = 128 # Adjust the Width of the picture here. Remember this will stretch the picture!
 new_height1 = 128 # Adjust the Height of the picture here. Remember this will stretch the picture!
-num_colors1 = 16 # Adjust the colors the picture will have here. Its not like 16 bits or anything, it just uses the most common colors from the picture.
+num_colors1 = 16 # Adjust the colors the picture will have here. It does not use a color palette, it just uses the most common colors from the picture.
 
 # The rest of the code is the program itself, you dont need to mess with anything. You might do something that will make the code unusable!
 
 # If you find any errors reach out to me on discord: rubenazaheker
 
-# This is my first public project, so i hope that you like it or something!
+# This is my first public project, so I hope that you like it or something!
 
 # Made by RubenAzaHeker aka RubenGT
 
 # If you want to support me, check out my website at http://www.rubengt.site , you'll find my ko-fi donation page there!
 
-print("Convert Pictures to lower resolutions1 Version 1.0o") # Read about this in readme.md from line 36 to line 38.
+# This is version 1.0.1o. This version is just 1.0o but i edited some of the comments. Thats all.
+
+print("Convert Pictures to lower resolutions1 Version 1.0.1o") # Read about this in readme.md from line 36 to line 38.
 print("Made By RubenAzaHeker aka RubenGT")
 print(" ")
 time.sleep(2)
@@ -49,7 +51,7 @@ def recreate_image(input_path, output_path, new_width=new_width1, new_height=new
     print("doing some shit")
     quantized_image = resized_image.quantize(colors=num_colors)
     
-    time.sleep(1)
+    time.sleep(1) # bro is sleeping
 
     # damn
 
@@ -71,6 +73,6 @@ recreate_image(input_path, output_path)
 
 warnings.filterwarnings("ignore", category=SyntaxWarning)
 
-# If you decide to edit the code thats okay until you dont make it public, if you want to publish this code contact me please. Even if the changes are minor changes!
+# After you change something in the code, it's out of my hands. But you are still allowed to make changes however you want :)
 
-# Credit to RubenAzaHeker aka RubenGT (the creator of this code, me)
+# Credit to RubenAzaHeker aka RubenGT (the creator of this code, myself:))
