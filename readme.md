@@ -1,4 +1,4 @@
-Version 1.0o of readme.md for MakePictureLowRes.py
+Version 1.1o of readme.md for MakePictureLowRes.py
 
 This is the readme.md for MakePictureLowRes.py made by RubenAzaHeker aka RubenGT
 
