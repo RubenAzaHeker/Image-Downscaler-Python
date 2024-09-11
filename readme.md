@@ -32,10 +32,21 @@ About the code:
 - To Adjust the values of the outcome picture you gotta have an editor installed, like: Microsoft Visual Studio Code
 - When Editing the file, dont change anything exept "new_width1", "new_height1", "num_colors1". Otherwise you might do
 something with the code that will make it malfunction and not work :(
-- placeholder
+- Make Minecraft texturepacks with this if you want, but if you do share it with me, ill try it! discord: rubenazaheker
 - This version actually has a couple more different versions. One even with a GUI, but those are bad and just for testing purposes only. In the near future
 I might release a version with GUI or a version that lets you edit the resolution and colors when starting the code so you dont need to edit the code in an editor. "o" stands 
 for Official, all the other versions which are not release to the public are "u" which stands for Unofficial of course. The official 1.0 is unavailable for download.
+
+- Example image of my cat Milo for illustration:
+
+Milo (my cat) before downscaling:
+
+![Milo Before Downscaling.](milo.JPEG)
+
+Milo after downscaling. 128 by 128 pixels and 16 colors.:
+
+![Milo Before Downscaling.](milo128.png)
+
 
 I suppose that this is it for readme.md
 

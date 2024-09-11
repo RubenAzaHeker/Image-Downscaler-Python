@@ -1,7 +1,6 @@
 from PIL import Image
 import os
 import time
-import warnings
 
 new_width1 = 128 # Adjust the Width of the picture here. Remember this will stretch the picture!
 new_height1 = 128 # Adjust the Height of the picture here. Remember this will stretch the picture!
@@ -9,7 +8,7 @@ num_colors1 = 16 # Adjust the colors the picture will have here. It does not use
 
 # The rest of the code is the program itself, you dont need to mess with anything. You might do something that will make the code unusable!
 
-# If you find any errors reach out to me on discord: rubenazaheker
+# If you find any errors or you get stuck on an error reach out to me on discord: rubenazaheker
 
 # This is my first public project, so I hope that you like it or something!
 
@@ -17,62 +16,71 @@ num_colors1 = 16 # Adjust the colors the picture will have here. It does not use
 
 # If you want to support me, check out my website at http://www.rubengt.site , you'll find my ko-fi donation page there!
 
-# This is version 1.0.1o. This version is just 1.0o but i edited some of the comments. Thats all.
+# This is version 1.1o. Read the changelog in readme.md!
 
-print("Convert Pictures to lower resolutions1 Version 1.0.1o") # Read about this in readme.md from line 36 to line 38.
+print("Convert pictures to lower resolutions Version 1.1o") # Read about this in readme.md from line 36 to line 38.
 print("Made By RubenAzaHeker aka RubenGT")
 print(" ")
 time.sleep(2)
 print("You must read the readme.md file to understand the usage of the program and how to edit the values!")
 print(" ")
 time.sleep(2)
-print(f"Resolution set to w={new_width1} and h={new_height1}, Color(s): {num_colors1}. To edit read readme.md")
+print("Resolution set to:")
+print(f"Width is {new_width1} Pixels")
+time.sleep(0.1)
+print(f"Height is {new_height1} Pixels")
+time.sleep(0.1)
+print(f"Amount of the colors that will be used is {num_colors1} Colors")
 print(" ")
 time.sleep(2)
 
-def recreate_image(input_path, output_path, new_width=new_width1, new_height=new_height1, num_colors=num_colors1):
-    print(f"Checking if the input file exists: {input_path}")
-    if not os.path.isfile(input_path):
-        print(f"Error: The file {input_path} not found.")
-        return
+# If you decided to look into the code more, this is where the code actually transforms the picture.
 
+def outimage(input_p, output_p, height=new_height1, width=new_width1, ncolors=num_colors1):
+    if not os.path.isfile(input_p):   # If the file isnt found ----> ----> ----> ---->    ↓↓↓
+        print(f"Sadly, the code couldn't find the file:( Error: {input_p} not found.") # Print out the error then ↓↓↓
+        return # break <---- <---- <---- <---- <---- <---- <---- <---- <---- <---- <---- <---- <---- <---- <---- <----
     try:
-        print("Opening image")
-        original_image = Image.open(input_path)
+        print("Opening image now.")    
+        original_image = Image.open(input_p) # This will open the image.
     except Exception as e:
-        print(f"An error occurred while opening the image: {e}")
-        return
-
-    print("Editing image size")
-    resized_image = original_image.resize((new_width, new_height))
+        print(f"Couldn't open image, closing now. Error {e}") # If it couldnt open, it will print this error.
+        return # break
     
-    time.sleep(2)
-
-    print("doing some shit")
-    quantized_image = resized_image.quantize(colors=num_colors)
+    print("Resizing image:")
+    print("0%")
+    resized_image = original_image.resize((width, height))   # This will actually resize the image.
+    time.sleep(0.5)
+    print("100%")
+    time.sleep(1)
     
-    time.sleep(1) # bro is sleeping
-
-    # damn
-
     try:
-        print(f"Creating image and saving it to: {output_path}")
+        print("Adujusting the colors:")
+        print("0%")
+        quantized_image = resized_image.convert('P', palette=Image.ADAPTIVE, colors=ncolors)    # This was added in v1.1 read about it in changelog in readme.md
+        time.sleep(0.2)
+        print("100%")
         time.sleep(1)
-        quantized_image.save(output_path)
-        print(f"Image saved successfully to: {output_path}")
     except Exception as e:
-        print(f"An error occurred while saving the image: {e}")
+        print(f"Error during color adjustment: {e}")
+        return
+        
+    try:
+        print("Saving image.")
+        quantized_image.save(output_p)
+        time.sleep(1)
+        print("Image Successfully Saved")
+    except Exception as e:
+        print(f"Couldn't save image. Closing Now. {e}")
 
-input_path = input("Enter the name of the input file with a name (and path to the directory if necessarily) >>> ").strip()
-output_path = input("Enter the name of the output file with a name (and path to the directory if necessarily) >>> ").strip()
+    
+input_p = input("Enter the name of the input file with a name (and path to the directory if necessarily) >>> ").strip()
+output_p = input("Enter the name of the output file with a name (and path to the directory if necessarily) >>> ").strip()
 
-print(f"Input Path: {input_path}")
-print(f"Output Path: {output_path}")
+outimage(input_p, output_p)
 
-recreate_image(input_path, output_path)
+# if you decided to look over the code ur welcome.
 
-warnings.filterwarnings("ignore", category=SyntaxWarning)
+# Made by RubenAzaHeker aka RubenGT
 
-# After you change something in the code, it's out of my hands. But you are still allowed to make changes however you want :)
-
-# Credit to RubenAzaHeker aka RubenGT (the creator of this code, myself:))
+# This was Version 1.1o
