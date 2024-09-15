@@ -2,9 +2,9 @@ from PIL import Image
 import os
 import time
 
-new_width1 = 128 # Adjust the Width of the picture here. Remember this will stretch the picture!
-new_height1 = 128 # Adjust the Height of the picture here. Remember this will stretch the picture!
-num_colors1 = 16 # Adjust the colors the picture will have here. It does not use a color palette, it just uses the most common colors from the picture.
+new_width1 = 128 # Adjust the Width of the picture here. Remember this will stretch the picture! In the new version, editor isnt needed.
+new_height1 = 128 # Adjust the Height of the picture here. Remember this will stretch the picture! In the new version, editor isnt needed.
+num_colors1 = 16 # Adjust the colors the picture will have here. It does not use a color palette, it just uses the most common colors from the picture. In the new version, editor isnt needed.
 
 # The rest of the code is the program itself, you dont need to mess with anything. You might do something that will make the code unusable!
 
@@ -16,22 +16,56 @@ num_colors1 = 16 # Adjust the colors the picture will have here. It does not use
 
 # If you want to support me, check out my website at http://www.rubengt.site , you'll find my ko-fi donation page there!
 
-# This is version 1.1o. Read the changelog in readme.md!
+# This is version 1.2o. Read the changelog in readme.md!
 
-print("Convert pictures to lower resolutions Version 1.1o") # Read about this in readme.md from line 36 to line 38.
+print("Convert pictures to lower resolutions Version 1.2o") # Read about this in readme.md from line 36 to line 38.
 print("Made By RubenAzaHeker aka RubenGT")
 print(" ")
+
 time.sleep(2)
-print("You must read the readme.md file to understand the usage of the program and how to edit the values!")
+
+print("Since version 1.2, you dont need an editor to use the program!")
 print(" ")
+
 time.sleep(2)
+
+print("Now we are gonna set the resolutions and colors.")
+time.sleep(0.4)
+res_height1 = int(input("Height in pixels. Loswest amount possible is 64 pixels Up to 512 pixels. >>> ").lower())
+res_width1 = int(input("Width in pixels. Loswest amount possible is 64 pixels Up to 512 pixels. >>> ").lower())
+col_color = int(input("How many colors will you use? Recomended: 4, 8, 16, 32 or 64. Colors up to 256. >>> ").lower())
+
+if 64 <= res_height1 <= 512:
+    print("placeholder, accept")
+    new_height1 = res_height1
+else:
+    print("Something went wrong, please relaunch the program. You might put in a bigger resolution than supported.")
+    exit()
+if 64 <= res_width1 <= 512:
+    print("placeholder, accept")
+    new_width1 = res_width1 
+else:
+    print("Something went wrong, please relaunch the program. You might put in a bigger resolution than supported.")
+    exit()
+if 1 <= col_color <= 256:
+    print("placeholder, accept")
+    num_colors1 = col_color
+else:
+    print("Something went wrong. Maximum allowed color is 256.")
+    exit()
+
 print("Resolution set to:")
 print(f"Width is {new_width1} Pixels")
-time.sleep(0.1)
+
+time.sleep(0.5)
+
 print(f"Height is {new_height1} Pixels")
-time.sleep(0.1)
+
+time.sleep(0.5)
+
 print(f"Amount of the colors that will be used is {num_colors1} Colors")
 print(" ")
+
 time.sleep(2)
 
 # If you decided to look into the code more, this is where the code actually transforms the picture.
@@ -66,10 +100,10 @@ def outimage(input_p, output_p, height=new_height1, width=new_width1, ncolors=nu
         return
         
     try:
-        print("Saving image.")
+        print("Saving image...")
         quantized_image.save(output_p)
         time.sleep(1)
-        print("Image Successfully Saved")
+        print("Image Saved Successfully!")
     except Exception as e:
         print(f"Couldn't save image. Closing Now. {e}")
 
@@ -79,8 +113,11 @@ output_p = input("Enter the name of the output file with a name (and path to the
 
 outimage(input_p, output_p)
 
+
 # if you decided to look over the code ur welcome.
 
 # Made by RubenAzaHeker aka RubenGT
 
-# This was Version 1.1o
+# This was Version 1.2o
+
+# Date: September 13th 2024, 11 PM EEST.
